@@ -102,6 +102,52 @@
             font-size: 14px;
             color: #94a3b8;
         }
+
+        /* Plan Section */
+        .plans-section {
+            display: none;
+            justify-content: space-around;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        .plan-card {
+            background: #1f2937;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .plan-card h3 {
+            color: #38bdf8;
+        }
+
+        .plan-card .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #38bdf8;
+        }
+
+        .plan-card .features {
+            margin-bottom: 15px;
+        }
+
+        .plan-card .btn-plan {
+            background: #38bdf8;
+            color: #020617;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .plan-card .btn-plan:hover {
+            background: #0ea5e9;
+        }
     </style>
 </head>
 
@@ -111,8 +157,8 @@
     <h1>⚡ Rock Hosting</h1>
     <nav>
         <a href="index.html">Home</a>
-    <a href="login.html">Login</a>
-    <a href="singup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
     </nav>
 </header>
 
@@ -124,29 +170,65 @@
 
     <div class="buttons">
         <a class="btn-primary" onclick="showSignUp()">Get Started</a>
-        <a href="#" class="btn-secondary">View Plans</a>
-    </div>
-
-    <div id="signup-section" style="display:none;">
-        <h2>Sign Up</h2>
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <button>Sign Up</button>
-        <span class="login-link" onclick="alert('Go to Login form here')">Already have an account? Login</span>
+        <a href="#" class="btn-secondary" onclick="togglePlans()">View Plans</a>
     </div>
 </section>
 
+<!-- Hosting Plans Section -->
+<section id="plans-section" class="plans-section">
+    <!-- Rock Plan -->
+    <div class="plan-card">
+        <h3>Rock Plan</h3>
+        <div class="price">₹15</div>
+        <div class="features">
+            <p>4GB RAM</p>
+            <p>50 Player Slots</p>
+            <p>Great for small groups</p>
+        </div>
+        <a href="#" class="btn-plan">Get Started</a>
+    </div>
 
-    <div class="buttons">
-        <a href="#" class="btn-primary">Get Started</a>
-        <a href="#" class="btn-secondary">View Plans</a>
+    <!-- Bottle Plan -->
+    <div class="plan-card">
+        <h3>Bottle Plan</h3>
+        <div class="price">₹40</div>
+        <div class="features">
+            <p>8GB RAM</p>
+            <p>AMD Ryzen 7</p>
+            <p>500GB SSD</p>
+            <p>400 Player Slots</p>
+        </div>
+        <a href="#" class="btn-plan">Get Started</a>
+    </div>
+
+    <!-- BigRock Plan -->
+    <div class="plan-card">
+        <h3>BigRock Plan</h3>
+        <div class="price">₹150</div>
+        <div class="features">
+            <p>12GB RAM</p>
+            <p>1TB SSD</p>
+            <p>Unlimited Player Slots</p>
+        </div>
+        <a href="#" class="btn-plan">Get Started</a>
     </div>
 </section>
 
 <footer>
     © 2025 Rock Hosting. All Rights Reserved.
 </footer>
+
+<!-- JavaScript to toggle plans visibility -->
+<script>
+    function togglePlans() {
+        const plansSection = document.getElementById('plans-section');
+        if (plansSection.style.display === "none" || plansSection.style.display === "") {
+            plansSection.style.display = "flex";
+        } else {
+            plansSection.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
